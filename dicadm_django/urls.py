@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('dicadm_django.core.urls', namespace="core")),
-    url(r'^dictionary/', include('dictionary.urls', namespace="dictionary")),
+    url(r'^dicionario/', include('dicadm_django.dictionary.urls', namespace="dictionary")),
 ]
