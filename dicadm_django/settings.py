@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # my apps
     'dicadm_django.core',
+    'dictionary',
 ]
 
 MIDDLEWARE = [
