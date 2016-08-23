@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,8 @@
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,7 +21,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body id="top">
 
 	 <nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
@@ -39,14 +40,14 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <form class="navbar-form navbar-right">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	          <input type="text" class="form-control" placeholder="Pesquisar">
 	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
+	        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="{% url 'core:index' %}">Início</a></li>
 	        <li><a href="{% url 'core:about' %}">Sobre</a></li>
-	        <li><a href="{% url 'dictionary:index' %}">Termos</a></li>
+	        <li><a href="{% url 'dictionary:index' %}">Dicionário</a></li>
 	        
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -58,6 +59,30 @@
   		{%block container%}{%endblock container%}
 
   	</div>
+  	<hr>
+  	<footer>
+  		<div class="container">
+  			<div class="col-md-4">
+  				<a href="{% url 'core:index' %}">Início</a> |
+  				<a href="{% url 'core:about' %}">Sobre</a> |
+  				<a href="{% url 'dictionary:index' %}">Dicionário</a>
+  			</div>
+	  		<div class="text-center col-md-4">	
+		  		<strong>Victor Holanda</strong><br>
+				<a href="https://www.facebook.com/victorholanda21" target="_blank">Facebook</a> | 
+				<a href="https://github.com/VictorHolanda21/" target="_blank">Github</a> | 
+				<a href="https://www.linkedin.com/in/victorholanda21" target="_blank">LinkedIn</a>
+	  		</div>
+	  		<div class="col-md-4 text-right">
+	  			<a href="#top" title="Topo">
+	  				<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	  			</a>
+	  		</div>
+	  		<div class="col-md-12">
+	  			
+	  		</div>
+  		</div>
+  	</footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
