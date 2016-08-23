@@ -1,13 +1,15 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block title %} Sobre {{ block.super }} {% endblock %}
 
 {% block container %}
 	<div class="page-header">
 		<h1>Sobre</h1>
 	</div>
-	<div class="col-lg-8 text-justify">
-
+	<div class="col-lg-8">
+		<br>
+		<div class="text-justify">
+			
 		<p>
 			<strong>Dicadm App</strong> é uma aplicação web voltada para estudantes de administração que tem como objetivo ser uma fonte de pesquisa para os jovens estudantes e pequenos empresários.
 		</p>
@@ -43,5 +45,11 @@
 				<a href="https://www.linkedin.com/in/victorholanda21" target="_blank">LinkedIn</a>
 			</li>
 		</ul>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="center">
+			<img src="{% static 'img/icon_dicadm_256px.png' %}" class="img-responsive">
+		</div>
 	</div>
 {% endblock container %}

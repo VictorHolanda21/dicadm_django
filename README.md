@@ -21,7 +21,7 @@ Antes de testar, execute no terminal para instalar as dependências:
 
 `pip install -r requirements.txt`
 
-## Vistite:
+## Visite:
 
 * Github [código fonte](https://github.com/VictorHolanda21/dicadm_django);
 * Site [projeto](https://victorholanda21.pythonanywhere.com/)
@@ -31,8 +31,9 @@ Antes de testar, execute no terminal para instalar as dependências:
 - [x] Início: primeiras views e rotas
 - [x] App Dictionary
 - [x] Refatorar código, tema
-- [ ] Pesquisa de termos
+- [x] Pesquisa de termos
+- [ ] Paginação de resultados
 - [ ] Acesso de usuários
 - [ ] Adicionar função "gostei"
-- [ ] Api para aplicativo
+- [ ] Api para aplicativo mobile
 - [ ] Adicionar função "favoritos"

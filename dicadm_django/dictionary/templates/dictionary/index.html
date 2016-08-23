@@ -4,15 +4,15 @@
 
 {%block container%}
 	<div class="page-header">
-		<h1>Hello, {{title}}!</h1>
+		<h1>{{title}}</h1>
 	</div>
 	<div>
 		<div class="list-group">
 			{% for word in words %}
 				<a href="{{word.get_absolute_url}}" class="list-group-item">{{word}}</a>
 			{% empty %}
-				<a href="#" class="list-group-item">
-					Lista vazia
+				<a href="#" class="list-group-item list-group-item-danger ">
+					<strong>Nenhum resultado encontrado! Por favor, tente outra palavra :).</strong>
 				</a>
 			{% endfor %}
 		</div>

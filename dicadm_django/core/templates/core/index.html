@@ -1,11 +1,18 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block title %} Início {{ block.super }} {% endblock %}
 
 {%block container%}
-	<div class="jumbotron">
-	  <h1>Olá, :).</h1>
-	  <p> <strong>Dicadm App</strong> é uma aplicação web voltada para estudantes de administração...</p>
-	  <p><a class="btn btn-primary btn-lg" href="{% url 'core:about' %}" role="button">Saiba mais</a></p>
+	<div class="jumbotron col-lg-12">
+		<div class="col-md-4">
+			<img src="{% static 'img/icon_dicadm_256px.png' %}" class="img-responsive">
+			
+		</div>
+		<div class="col-md-8">
+		 	<h1>Olá, :).</h1>
+		 	<p> <strong>Dicadm App</strong> é uma aplicação web voltada para estudantes de administração...</p>
+			<p><a class="btn btn-primary btn-lg" href="{% url 'core:about' %}" role="button">Saiba mais</a></p>
+			
+		</div>
 	</div>
 {%endblock container%}
