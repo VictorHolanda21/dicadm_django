@@ -1,13 +1,16 @@
 from django.shortcuts import render
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from django.db.models import Q
+
 from .models import Word
 
 # Create your views here.
 
 def index(request):
 	template_name = "dictionary/index.html"
-	title = "Resultado:"
+	title = "Resultado"
 	words = Word.objects.all()
 
 	query = request.GET.get('q')
@@ -18,6 +21,15 @@ def index(request):
 				Q(description__icontains=query)
 			).distinct()
 
+	paginator = Paginator(words, 20)
+	page = request.GET.get('page')
+	try:
+		words = paginator.page(page)
+	except PageNotAnInteger:
+		words = paginator.page(1)
+	except EmptyPage:
+		words = paginator.page(paginator.num_pages)
+		
 	context = {
 		'title' : title,
 		'words' : words,

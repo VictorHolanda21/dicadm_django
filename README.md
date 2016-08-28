@@ -32,7 +32,7 @@ Antes de testar, execute no terminal para instalar as dependências:
 - [x] App Dictionary
 - [x] Refatorar código, tema
 - [x] Pesquisa de termos
-- [ ] Paginação de resultados
+- [x] Paginação de resultados
 - [ ] Acesso de usuários
 - [ ] Adicionar função "gostei"
 - [ ] Api para aplicativo mobile
