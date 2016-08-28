@@ -11,8 +11,8 @@
 			{% for word in words %}
 				<a href="{{word.get_absolute_url}}" class="list-group-item">{{word}}</a>
 			{% empty %}
-				<a href="#" class="list-group-item list-group-item-danger ">
-					<strong>Nenhum resultado encontrado! Por favor, tente outra palavra :).</strong>
+				<a href="#" class="list-group-item">
+					Nenhum resultado encontrado para <strong>{{queryset}}</strong>! Por favor, tente outra palavra :).
 				</a>
 			{% endfor %}
 		</div>

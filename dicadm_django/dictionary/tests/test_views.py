@@ -27,7 +27,7 @@ class IndexTestCase(TestCase):
 		response = self.client.get(self.url)
 		self.assertTrue('title' in response.context)
 		self.assertTrue('words' in response.context)
-		self.assertEquals(response.context['title'], "Termos" )
+		self.assertEquals(response.context['title'], "Resultado:" )
 
 
 class DetailTestCase(TestCase):

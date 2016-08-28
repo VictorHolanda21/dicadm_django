@@ -20,7 +20,8 @@ def index(request):
 
 	context = {
 		'title' : title,
-		'words' : words
+		'words' : words,
+		'queryset' : query
 	}
 	return render(request, template_name, context)
 
