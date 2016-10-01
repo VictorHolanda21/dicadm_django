@@ -10,7 +10,7 @@ from .models import Word
 
 def index(request):
 	template_name = "dictionary/index.html"
-	title = "Resultado"
+	title = "Dicionário"
 	words = Word.objects.all()
 
 	query = request.GET.get('q')

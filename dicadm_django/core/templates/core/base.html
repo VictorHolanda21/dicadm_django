@@ -10,9 +10,10 @@
 
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,12 +22,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id="top">
+  <body id="page-top" class="index">
 
-	 <nav class="navbar navbar-default navbar-fixed-top">
+	 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
 	  <div class="container">
 	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
+	    <div class="navbar-header page-scroll">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Menu</span>
 	        <span class="icon-bar"></span>
@@ -37,7 +38,6 @@
 	      	<strong>Dicadm App</strong>
 	      </a>
 	    </div>
-
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <form class="navbar-form navbar-right" action="{% url 'dictionary:index' %}" method="GET">
@@ -48,43 +48,75 @@
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="{% url 'core:index' %}">Início</a></li>
-	        <li><a href="{% url 'core:about' %}">Sobre</a></li>
 	        <li><a href="{% url 'dictionary:index' %}">Dicionário</a></li>
+	        <li><a href="{% url 'core:about' %}">Sobre</a></li>
 	        
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-  	<div class="container" style="margin-top:40px;">
+  	<div>
   		
   		{%block container%}{%endblock container%}
 
   	</div>
-  	<hr>
-  	<footer>
-  		<div class="container">
-  			<div class="col-md-4">
-  				<a href="{% url 'core:index' %}">Início</a> |
-  				<a href="{% url 'core:about' %}">Sobre</a> |
-  				<a href="{% url 'dictionary:index' %}">Dicionário</a>
-  			</div>
-	  		<div class="text-center col-md-4">	
-		  		<strong>Victor Holanda</strong><br>
-				<a href="https://www.facebook.com/victorholanda21" target="_blank">Facebook</a> | 
-				<a href="https://github.com/VictorHolanda21/" target="_blank">Github</a> | 
-				<a href="https://www.linkedin.com/in/victorholanda21" target="_blank">LinkedIn</a>
-	  		</div>
-	  		<div class="col-md-4 text-right">
-	  			<a href="#top" title="Topo">
-	  				<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-	  			</a>
-	  		</div>
-	  		<div class="col-md-12">
-	  			
-	  		</div>
-  		</div>
-  	</footer>
+
+  	<!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Menu</h3>
+                        <p>
+                        	<a href="{% url 'core:index' %}">Início</a>
+                        </p>
+  						<p>
+  							<a href="{% url 'dictionary:index' %}">Dicionário</a>
+  						</p>
+  						<p>
+  							<a href="{% url 'core:about' %}">Sobre</a>
+  						</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Victor Holanda</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/victorholanda21" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook fa-2x"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/VictorHolanda21/" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github fa-2x"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/victorholanda21" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin fa-2x"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Dicadm App</h3>
+                        <p>Dicadm App é uma aplicação web voltada para estudantes de administração.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Victor Holanda, 2016.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

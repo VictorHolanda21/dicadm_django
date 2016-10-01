@@ -33,6 +33,7 @@ Antes de testar, execute no terminal para instalar as dependências:
 - [x] Refatorar código, tema
 - [x] Pesquisa de termos
 - [x] Paginação de resultados
+- [x] Refatorar código, tema (2)
 - [ ] Acesso de usuários
 - [ ] Adicionar função "gostei"
 - [ ] Api para aplicativo mobile
