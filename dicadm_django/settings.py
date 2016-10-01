@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,8 +130,7 @@ STATIC_URL = '/static/'
 ALLOWED_HOSTS = ['*']
 
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Messages
 from django.contrib.messages import constants as messages_constants
