@@ -6,16 +6,25 @@
 Serão mais de **300 termos** que foram coletados de livros e Internet. Caso encontre algum erro e/ou tenha dicas, sugestões ou críticas, entre em contato :).
 Inicialmente a aplicação foi pensada para ser um dicionário de termos técnicos da administração, que aos poucos seriam adicionados funções como divulgações de vagas de estágios, dicas sobre áreas da administração, dicas sobre o mercado de trabalho em Teresina/PI, criação de uma aplicação para smartphones Android, e etc.
 
+## Imagens:
+
+![Início](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/home.png "Página inicial")
+
+![Sobre](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/about.png "Página sobre")
+
+![Dicionário](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/dictionary.png "Página de pesquisa")
+
 ## Tecnologias utilizadas:
 
 * [Python](https://www.python.org/) 3.5
 * [Django](https://www.djangoproject.com/) 1.10
-* [Bootstrap](http://getbootstrap.com/) 3.3, tema: [Cerulean](https://bootswatch.com/cerulean/)
+* [Bootstrap](http://getbootstrap.com/) 3.3
 
 ## Outros requisitos:
 
 * [model-mommy](https://pypi.python.org/pypi/model_mommy) 1.2.6
 * [six](https://pypi.python.org/pypi/six) 1.10.0
+* [whitenoise](https://pypi.python.org/pypi/whitenoise)
 
 Antes de testar, execute no terminal para instalar as dependências:
 
