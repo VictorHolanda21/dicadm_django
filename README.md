@@ -30,41 +30,41 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 
 1. Clone o projeto para a sua máquina local:
 
-`https://github.com/VictorHolanda21/dicadm_django.git`
+⋅⋅`https://github.com/VictorHolanda21/dicadm_django.git`
 
 2. Entre no diretório do projeto:
 
-`cd dicadm_django`
+⋅⋅`cd dicadm_django`
 
 3. Crie um ambiente virtual no python:
 
-`virtualenv -p python3 vdicadm`
+⋅⋅`virtualenv -p python3 vdicadm`
 
 4. Ative o ambiente:
 
-`source vdicadm/bin/activate`
+⋅⋅`source vdicadm/bin/activate`
 
 5. Instale as dependências:
  
- `pip install -r requirements.txt`
+⋅⋅`pip install -r requirements.txt`
 
 6. Execute as migrações:
 
-`./manage.py migrate `
+⋅⋅`./manage.py migrate`
 
 7. Popule o banco de dados:
 
-`./manage.py shell < seed.py`
+⋅⋅`./manage.py shell < seed.py`
 
 8. Teste a aplicação:
 
-`./manage.py test`
+⋅⋅`./manage.py test`
 
-A aplicação não está 100% testada.
+⋅⋅⋅A aplicação não está 100% testada.
 
 9. Rode o servidor:
 
-`./manage.py runserver 0:8000`
+⋅⋅`./manage.py runserver 0:8000`
 
 ## Visite
 
