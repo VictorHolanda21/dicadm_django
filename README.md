@@ -8,11 +8,11 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 
 ## Imagens:
 
-![Início](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/home.png "Página inicial")
+![Início](_design/screenshot/home.png "Página inicial")
 
-![Sobre](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/about.png "Página sobre")
+![Sobre](_design/screenshot/about.png "Página sobre")
 
-![Dicionário](https://github.com/VictorHolanda21/dicadm_django/tree/master/_design/print/dictionary.png "Página de pesquisa")
+![Dicionário](_design/screenshot/dictionary.png "Página de pesquisa")
 
 ## Tecnologias utilizadas:
 
