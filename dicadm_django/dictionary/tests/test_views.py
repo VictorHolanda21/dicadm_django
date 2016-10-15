@@ -27,6 +27,7 @@ class IndexTestCase(TestCase):
 		response = self.client.get(self.url)
 		self.assertTrue('title' in response.context)
 		self.assertTrue('words' in response.context)
+		self.assertTrue('queryset' in response.context)
 		self.assertEquals(response.context['title'], "Dicionário" )
 
 
@@ -54,3 +55,15 @@ class DetailTestCase(TestCase):
 		self.assertTrue('word' in response.context)
 		self.assertEquals(response.context['title'], "Detalhe" )
 		self.assertEquals(response.context['word'], self.word )
+
+class AddWordTestCase(TestCase):
+	def setUp(self):
+		self.url = reverse('dictionary:add_word')
+
+	def test_status_code(self):
+		response = self.client.get(self.url)
+		self.assertEquals(response.status_code, 200)
+
+	def test_template_used(self):
+		response = self.client.get(self.url)
+		self.assertTemplateUsed(response, 'dictionary/add_word.html')

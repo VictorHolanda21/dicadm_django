@@ -29,7 +29,7 @@ class Category(models.Model):
 class Word(models.Model):
 	category = models.ForeignKey(Category)
 
-	title = models.CharField('Título', max_length=128)
+	title = models.CharField('Título', max_length=128, unique=True)
 	slug = models.SlugField('Atalho', unique=True)
 	description = models.TextField('Descrição')
 

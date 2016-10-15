@@ -29,6 +29,7 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 * [Pillow](https://pypi.python.org/pypi/Pillow/3.4.1) 3.4.1
 * [six](https://pypi.python.org/pypi/six) 1.10.0
 * [whitenoise](https://pypi.python.org/pypi/whitenoise) 3.2.2
+* [django-widget-tweaks](https://pypi.python.org/pypi/django-widget-tweaks) 1.4.1
 
 ## Para testar
 
@@ -84,7 +85,7 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 - [x] Paginação de resultados
 - [x] Refatorar código, tema (2)
 - [x] Adicionar categoria de palavras
-- [ ] Adicionar formulário para Categoria e Palavras
+- [x] Adicionar formulário para Categoria e Palavras
 - [ ] Acesso de usuários
 - [ ] Adicionar função "gostei" e "visualização"
 - [ ] API para aplicativo mobile
