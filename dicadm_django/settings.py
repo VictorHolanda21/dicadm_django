@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # libs
+    'widget_tweaks',
+
     # my apps
     'dicadm_django.core',
     'dicadm_django.dictionary',

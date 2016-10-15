@@ -1,13 +1,17 @@
 {% extends 'core/base.html' %}
 
+{% load dictionary_template_tags %}
+
 {% block title %} {{title}} {{ block.super }} {% endblock %}
 
 {%block container%}
 	<div class="container" style="margin-top:80px;">
 		
 	<div class="page-header">
-		<h1>{{title}}
-			{%if querycat%}<small><i class="fa fa-tag" aria-hidden="true"></i> {{querycat}}</small>{%endif%}
+		<h1>{{title}}{% if category %}: {{category}} {% endif%}
+			<a href="{% url 'dictionary:add_word'%}">
+				<i class="fa fa-plus-circle fa-1x" aria-hidden="true" style="float:right;"></i>
+			</a>
 		</h1>
 	</div>
 	<div class="row">
@@ -20,17 +24,9 @@
 				</a>
 			{% endfor %}
 		</div>
-		<div class="list-group col-md-4">
-			<a href="" class="list-group-item active"><i class="fa fa-tag" aria-hidden="true"></i> Categorias</a>
-			<a href="?cat=todas" class="list-group-item">Todas</a>
-			{% for category in categories%}
-				<a href="?cat={{category.slug}}" class="list-group-item">{{category}}</a>
-			{% empty%}
-				<a href="#" class="list-group-item">
-					Categorias não encontradas
-				</a>
-			{% endfor %}
-		</div>
+		{% block sidebar_block %}
+			{% get_category_list %}
+		{% endblock %}
 	</div>
 	<div class="row">
 
@@ -38,7 +34,7 @@
 		  <ul class="pagination">
 	        {% if words.has_previous %}
 		    	<li class="previous">
-		    		<a href="?page={{ words.previous_page_number }}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
+		    		<a href="?page={{ words.previous_page_number }}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
 		    			<span aria-hidden="true">&laquo;</span>
 		    		</a>
 		    	</li>
@@ -46,14 +42,14 @@
 
 	       	{% for p in words.paginator.page_range %}
 			  <li {% if words.number == p %} class="active" {%endif%}>
-			  	<a href="?page={{p}}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">{{p}}</a>
+			  	<a href="?page={{p}}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">{{p}}</a>
 			  </li>
 	       	{% endfor %}
 
 
 	        {% if words.has_next %}
 		    	<li class="next">
-		    		<a href="?page={{ words.next_page_number }}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
+		    		<a href="?page={{ words.next_page_number }}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
 		    			<span aria-hidden="true">&raquo;</span>
 		    		</a>
 		    	</li>

@@ -32,41 +32,41 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 
 ## Para testar
 
-1. Clone o projeto para a sua máquina local:
+#1. Clone o projeto para a sua máquina local:
 
 `https://github.com/VictorHolanda21/dicadm_django.git`
 
-2. Entre no diretório do projeto:
+#2. Entre no diretório do projeto:
 
 `cd dicadm_django`
 
-3. Crie um ambiente virtual no python:
+#3. Crie um ambiente virtual no python:
 
 `virtualenv -p python3 vdicadm`
 
-4. Ative o ambiente:
+#4. Ative o ambiente:
 
 `source vdicadm/bin/activate`
 
-5. Instale as dependências:
+#5. Instale as dependências:
  
 `pip install -r requirements.txt`
 
-6. Execute as migrações:
+#6. Execute as migrações:
 
 `./manage.py migrate`
 
-7. Popule o banco de dados:
+#7. Popule o banco de dados:
 
 `python populate.py`
 
-8. Teste a aplicação:
+#8. Teste a aplicação:
 
 `./manage.py test`
 
 **A aplicação não está 100% testada.**
 
-9. Rode o servidor:
+#9. Rode o servidor:
 
 `./manage.py runserver 0:8000`
 
@@ -84,7 +84,8 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 - [x] Paginação de resultados
 - [x] Refatorar código, tema (2)
 - [x] Adicionar categoria de palavras
+- [ ] Adicionar formulário para Categoria e Palavras
 - [ ] Acesso de usuários
 - [ ] Adicionar função "gostei" e "visualização"
-- [ ] Api para aplicativo mobile
+- [ ] API para aplicativo mobile
 - [ ] Adicionar função "favoritos"

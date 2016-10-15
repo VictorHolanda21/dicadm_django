@@ -47,7 +47,7 @@ def populate():
 
 	# Administração Estratégia
 	ae_words =[
-		{"title" :"BSC Balanced Scorecard", "slug" :"bsc-balanced-scorecard", "description" :"E uma metodologia de medição e avaliação das alternativas estratégicas, desenvolvida pelos norte-americanos Robert Kaplan e David Norton. Têm como objetivos desta metodologia: simplificar a estratégia e a sua comunicação a todos os membros da organização; alinhar a organização com a estratégia; ligar a estratégia ao plano e ao orçamento anual e medir a eficácia da estratégia. É estruturada em torno de quatro questões (ou dimensões) centrais: Perspectiva do Cliente, Perspectiva dos Processos, Perspectiva Financeira e Perspectiva da Aprendizagem e Crescimento."},
+		{"title" :"BSC Balanced Scorecard", "slug" :"bsc-balanced-scorecard", "description" :"É uma metodologia de medição e avaliação das alternativas estratégicas, desenvolvida pelos norte-americanos Robert Kaplan e David Norton. Têm como objetivos desta metodologia: simplificar a estratégia e a sua comunicação a todos os membros da organização; alinhar a organização com a estratégia; ligar a estratégia ao plano e ao orçamento anual e medir a eficácia da estratégia. É estruturada em torno de quatro questões (ou dimensões) centrais: Perspectiva do Cliente, Perspectiva dos Processos, Perspectiva Financeira e Perspectiva da Aprendizagem e Crescimento."},
 	]
 
 	# Administração de Marketing
@@ -59,7 +59,7 @@ def populate():
 	cats = {
 				"Geral": {"slug": "geral", "words": ag_words},
 				"Financeira": {"slug": "financeira", "words": af_words},
-				"Tecnologia da Informção": {"slug": "tecnologia-da-informacao", "words": ati_words},
+				"Tecnologia da Informação": {"slug": "tecnologia-da-informacao", "words": ati_words},
 				"Estratégia" : {"slug":"estrategia", "words":ae_words},
 				"Marketing": {"slug": "marketing", "words": mk_words},
 			}

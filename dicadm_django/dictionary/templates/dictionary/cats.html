@@ -1,0 +1,17 @@
+<div class="list-group col-md-4">
+	<p href="" class="list-group-item active">
+		<i class="fa fa-tag" aria-hidden="true"></i> 
+		Categorias
+		<a href="{% url 'dictionary:add_category'%}">
+			<i class="fa fa-plus-circle fa-1x" aria-hidden="true" style="color:#fff;float:right;"></i>
+		</a>
+	</p>
+	<a href="{% url 'dictionary:show_category'%}" class="list-group-item">Todas</a>
+	{% for category in cats%}
+		<a href="{{category.get_absolute_url}}" class="list-group-item">{{category}}</a>
+	{% empty%}
+		<a href="#" class="list-group-item">
+			Categorias não encontradas
+		</a>
+	{% endfor %}
+</div>
