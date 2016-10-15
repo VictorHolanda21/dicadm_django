@@ -14,6 +14,9 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 
 ![Dicionário](_design/screenshot/dictionary.png "Página de pesquisa")
 
+![Detalhe: Adhocracia](_design/screenshot/adhocracia.png "Detalhe da pesquisa: Adhocracia")
+
+
 ## Tecnologias utilizadas
 
 * [Python](https://www.python.org/) 3.5
@@ -55,13 +58,13 @@ Inicialmente a aplicação foi pensada para ser um dicionário de termos técnic
 
 7. Popule o banco de dados:
 
-`./manage.py shell < seed.py`
+`python populate.py`
 
 8. Teste a aplicação:
 
 `./manage.py test`
 
-A aplicação não está 100% testada.
+**A aplicação não está 100% testada.**
 
 9. Rode o servidor:
 
@@ -80,7 +83,8 @@ A aplicação não está 100% testada.
 - [x] Pesquisa de termos
 - [x] Paginação de resultados
 - [x] Refatorar código, tema (2)
+- [x] Adicionar categoria de palavras
 - [ ] Acesso de usuários
-- [ ] Adicionar função "gostei"
+- [ ] Adicionar função "gostei" e "visualização"
 - [ ] Api para aplicativo mobile
 - [ ] Adicionar função "favoritos"

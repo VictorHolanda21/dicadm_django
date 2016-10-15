@@ -6,15 +6,28 @@
 	<div class="container" style="margin-top:80px;">
 		
 	<div class="page-header">
-		<h1>{{title}}</h1>
+		<h1>{{title}}
+			{%if querycat%}<small><i class="fa fa-tag" aria-hidden="true"></i> {{querycat}}</small>{%endif%}
+		</h1>
 	</div>
-	<div>
-		<div class="list-group">
+	<div class="row">
+		<div class="list-group col-md-8">
 			{% for word in words %}
 				<a href="{{word.get_absolute_url}}" class="list-group-item">{{word}}</a>
 			{% empty %}
 				<a href="#" class="list-group-item">
-					Nenhum resultado encontrado para <strong>{{queryset}}</strong>! Por favor, tente outra palavra :).
+					Nenhum resultado encontrado{% if queryset != None %} para <strong>{{queryset}}</strong>{%endif%}! Por favor, tente outra palavra :).
+				</a>
+			{% endfor %}
+		</div>
+		<div class="list-group col-md-4">
+			<a href="" class="list-group-item active"><i class="fa fa-tag" aria-hidden="true"></i> Categorias</a>
+			<a href="?cat=todas" class="list-group-item">Todas</a>
+			{% for category in categories%}
+				<a href="?cat={{category.slug}}" class="list-group-item">{{category}}</a>
+			{% empty%}
+				<a href="#" class="list-group-item">
+					Categorias não encontradas
 				</a>
 			{% endfor %}
 		</div>
@@ -24,16 +37,26 @@
 		<nav class="text-center">
 		  <ul class="pagination">
 	        {% if words.has_previous %}
-		    	<li class="previous"><a href="?page={{ words.previous_page_number }}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}"><span aria-hidden="true">&laquo;</span></a></li>
+		    	<li class="previous">
+		    		<a href="?page={{ words.previous_page_number }}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
+		    			<span aria-hidden="true">&laquo;</span>
+		    		</a>
+		    	</li>
 	        {% endif %}
 
 	       	{% for p in words.paginator.page_range %}
-			  <li {% if words.number == p %} class="active" {%endif%}><a href="?page={{p}}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">{{p}}</a></li>
+			  <li {% if words.number == p %} class="active" {%endif%}>
+			  	<a href="?page={{p}}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">{{p}}</a>
+			  </li>
 	       	{% endfor %}
 
 
 	        {% if words.has_next %}
-		    	<li class="next"><a href="?page={{ words.next_page_number }}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}"><span aria-hidden="true">&raquo;</span></a></li>
+		    	<li class="next">
+		    		<a href="?page={{ words.next_page_number }}{%if request.GET.cat %}&cat={{ request.GET.cat}}{% endif %}{%if request.GET.q %}&q={{ request.GET.q}}{% endif %}">
+		    			<span aria-hidden="true">&raquo;</span>
+		    		</a>
+		    	</li>
 	        {% endif %}
 		  </ul>
 		</nav>

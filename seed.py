@@ -1,8 +1,10 @@
-from dicadm_django.dictionary.models import Word
+from dicadm_django.dictionary.models import Word, Category
 
 def populate():
 	print("\nPopulando Banco de Dados...............")
 	print("Total: %d" %( Word.objects.count() ) )
+	category = Category(name="Administração Geral", slug="administracao-geral")
+
 	word1 = Word(title = "Ações de processamento",slug = "acoes-de-processamento",description = "São atividades que são executadas a partir de uma ou várias entradas e que produzirão uma ou várias saídas.")
 	word2 = Word(title = "Adhocracia",slug = "adhocracia",description = "Segundo Mintzberg, a Adhocracia representa estruturas fluidas e de pequena escala. Típica em equipes de projetos, esta estrutura normalmente está ligada à horizontalidade do poder de decisão. O grau de especialidade e conhecimentos são elevados e a informalidade é uma forte característica. As principais vantagens desta estrutura são a reduzida burocracia e a rapidez no processo decisório. Parte chave da organização: Assessoria de Apoio.")
 	word3 = Word(title = "Administração",slug = "administracao",description = "A palavra Administração vem do latim, ad– que significa direção, tendência para, e minister – que significa subordinação ou obediência, ou seja, quem realiza uma função sob comando de outra ou presta serviço a outro, (CHIAVENATO, 2003).")

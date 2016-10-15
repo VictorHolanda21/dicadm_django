@@ -7,7 +7,11 @@
 		
 
 	<div class="page-header">
-		<h1>{{word}}</h1>
+		<h1>{{word}} 
+			<small><i class="fa fa-tag" aria-hidden="true"></i>
+			<a href="{% url 'dictionary:index' %}?&cat={{word.category.slug}}">{{word.category}}</a>
+			</small>
+		</h1>
 		<ol class="breadcrumb">
 		  <li><a href="{% url 'core:index' %}">Inicio</a></li>
 		  <li><a href="{% url 'dictionary:index' %}">Dicionário</a></li>

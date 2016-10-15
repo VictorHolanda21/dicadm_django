@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import Word
+from .models import Word, Category
 
 # Create your views here.
 
@@ -12,16 +12,27 @@ def index(request):
 	template_name = "dictionary/index.html"
 	title = "Dicionário"
 	words = Word.objects.all()
+	categories = Category.objects.all()
 
 	query = request.GET.get('q')
+	queryc = request.GET.get('cat')
+
+	if queryc: 
+		if queryc == "todas":
+			words = words
+		else:
+			words = words.filter(
+					Q(category__name__icontains=queryc) | 
+					Q(category__slug__icontains=queryc)
+				).distinct()
+
 	if query: 
 		words = words.filter(
 				Q(title__icontains=query) |
-				Q(slug__icontains=query) |
-				Q(description__icontains=query)
+				Q(slug__icontains=query)
 			).distinct()
 
-	paginator = Paginator(words, 20)
+	paginator = Paginator(words, 5)
 	page = request.GET.get('page')
 	try:
 		words = paginator.page(page)
@@ -33,8 +44,11 @@ def index(request):
 	context = {
 		'title' : title,
 		'words' : words,
-		'queryset' : query
+		'categories' : categories,
+		'queryset' : query,
+		'querycat' : queryc
 	}
+
 	return render(request, template_name, context)
 
 def detail(request, slug):
