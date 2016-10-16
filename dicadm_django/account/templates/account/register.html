@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{title}} {{block.super}} {% endblock %}
+
+{% block container %}
+	<div class="container" style="margin-top:80px;">
+		<div class="page-header">
+			<h1>{{title}}</h1>
+		</div>
+		<div class="row">
+			{% if registered%}
+				<div class="alert alert-success">
+					<strong>Obrigado por se registrar!</strong> Clique <a href="{% url 'core:index' %}">aqui</a> e retorne para a página inicial.
+				</div>
+			{% else %}
+				<form id="user_form" method="post" action="{% url 'account:register' %}" enctype="multipart/form-data">
+					{% csrf_token %}
+
+					{{user_form.as_p}}
+					{{profile_form.as_p}}
+
+					<input type="submit" name="submit" value="Registre-se">
+				</form>
+
+			{% endif %}
+			<p>Já possui cadastro? <a href="{% url 'account:user_login' %}">Entre.</a></p>
+		</div>
+	</div>
+{% endblock container%}

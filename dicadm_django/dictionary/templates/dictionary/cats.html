@@ -2,9 +2,12 @@
 	<p href="" class="list-group-item active">
 		<i class="fa fa-tag" aria-hidden="true"></i> 
 		Categorias
-		<a href="{% url 'dictionary:add_category'%}">
-			<i class="fa fa-plus-circle fa-1x" aria-hidden="true" style="color:#fff;float:right;"></i>
-		</a>
+
+		{% if not user.is_authenticated %}
+			<a href="{% url 'dictionary:add_category'%}">
+				<i class="fa fa-plus-circle fa-1x" aria-hidden="true" style="color:#fff;float:right;"></i>
+			</a>
+		{% endif %}
 	</p>
 	<a href="{% url 'dictionary:show_category'%}" class="list-group-item">Todas</a>
 	{% for category in cats%}

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     # my apps
+    'dicadm_django.account',
     'dicadm_django.core',
     'dicadm_django.dictionary',
 ]
@@ -142,6 +143,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = '/conta/entrar/'
+LOGOUT_URL = '/conta/sair/'
 
 # Messages
 from django.contrib.messages import constants as messages_constants

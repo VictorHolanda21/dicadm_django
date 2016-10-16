@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -53,7 +54,7 @@ def detail(request, slug):
 	}
 	return render(request, template_name, context)
 
-
+@login_required
 def add_word(request):
 	template_name = "dictionary/add_word.html"
 	title = "Adicionar Termo"
@@ -104,7 +105,7 @@ def show_category(request, slug=None):
 	}
 	return render(request, template_name, context)
 
-
+@login_required
 def add_category(request):
 	template_name = "dictionary/add_category.html"
 	title = "Adicionar categoria"

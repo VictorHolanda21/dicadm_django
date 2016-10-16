@@ -23,5 +23,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('dicadm_django.core.urls', namespace="core")),
+    url(r'^conta/', include('dicadm_django.account.urls', namespace="account")),
     url(r'^dicionario/', include('dicadm_django.dictionary.urls', namespace="dictionary")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
